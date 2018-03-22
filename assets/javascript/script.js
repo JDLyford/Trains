@@ -17,23 +17,16 @@ $("button").on("click", function(event) {
 
     console.log("works");
 
-    var firstTimeConverted = moment(firstTime, "HH:mm");
-
-    var currentTime = moment().format("HH:mm");
-
-    var nextArv = moment().diff(moment(firstTimeConverted), "minutes");
-
-    var timeRemainder = nextArv % frequency;
-
-    var minAway = frequency - timeRemainder;
-
-    var nextArv = moment().add(minAway, "minutes").format("HH:mm");
-
     var trainName = $("#trainNameInput").val().trim();
     var destination = $("#destinationInput").val().trim();
     var firstTime = $("#firstTimeInput").val().trim();
     var frequency = $("#freqInput").val().trim();
-
+    var firstTimeConverted = moment(firstTime, "HH:mm");
+    var currentTime = moment().format("HH:mm");
+    var nextArv = moment().diff(moment(firstTimeConverted), "minutes");
+    var timeRemainder = nextArv % frequency;
+    var minAway = frequency - timeRemainder;
+    var nextArv = moment().add(minAway, "minutes").format("HH:mm");
     
 
     console.log(trainName);
